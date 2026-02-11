@@ -25,6 +25,7 @@
   <div class="card-content">
     <h3>Wooden 4x4 Pickup</h3>
     <div class="gallery">
+      <img src="images/wooden-4x4-pickup-1.jpg">
       <img src="images/wooden-4x4-pickup-2.jpg">
       <img src="images/wooden-4x4-pickup-4.jpg">
     </div>
@@ -38,6 +39,7 @@
   <div class="card-content">
     <h3>Off Road SUV</h3>
     <div class="gallery">
+      <img src="images/off-road-suv-1.jpg">
       <img src="images/off-road-suv-2.jpg">
       <img src="images/off-road-suv-3.jpg">
     </div>
@@ -51,6 +53,7 @@
   <div class="card-content">
     <h3>Rock Crawler</h3>
     <div class="gallery">
+      <img src="images/rock-crawler.jpg">
       <img src="images/rock-crawler-2.jpg">
     </div>
     <a href="https://wa.me/254705845918" class="btn">Order on WhatsApp</a>
@@ -62,6 +65,9 @@
   <img src="images/safari-suv-1.jpg" class="main">
   <div class="card-content">
     <h3>Safari SUV</h3>
+    <div class="gallery">
+      <img src="images/safari-suv-1.jpg">
+    </div>
     <a href="https://wa.me/254705845918" class="btn">Order on WhatsApp</a>
   </div>
 </div>
@@ -72,6 +78,7 @@
   <div class="card-content">
     <h3>Convertible Car</h3>
     <div class="gallery">
+      <img src="images/convertible-car-version-1.jpg">
       <img src="images/convertible-car-version-1-1.jpg">
       <img src="images/convertible-car-version-2_3.jpg">
     </div>
@@ -84,6 +91,9 @@
   <img src="images/mortocycle-ver-1.jpg" class="main">
   <div class="card-content">
     <h3>Wooden Motorcycle</h3>
+    <div class="gallery">
+      <img src="images/mortocycle-ver-1.jpg">
+    </div>
     <a href="https://wa.me/254705845918" class="btn">Order on WhatsApp</a>
   </div>
 </div>
@@ -94,6 +104,7 @@
   <div class="card-content">
     <h3>Wooden Biplane</h3>
     <div class="gallery">
+      <img src="images/biplanes.jpg">
       <img src="images/biplanes-2.jpg">
     </div>
     <a href="https://wa.me/254705845918" class="btn">Order on WhatsApp</a>
@@ -105,6 +116,22 @@
 <footer>
   © 2026 Handcrafted Wooden Toys | Made in Kenya
 </footer>
+
+<!-- JavaScript for Image Expansion -->
+<script>
+  const galleries = document.querySelectorAll(".gallery");
+
+  galleries.forEach(gallery => {
+    const mainImage = gallery.closest(".card").querySelector(".main");
+    const thumbnails = gallery.querySelectorAll("img");
+
+    thumbnails.forEach(thumb => {
+      thumb.addEventListener("click", () => {
+        mainImage.src = thumb.src;
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
