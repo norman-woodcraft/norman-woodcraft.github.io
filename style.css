@@ -144,16 +144,7 @@ nav a:hover {
 .gallery img:hover {
   border: 2px solid #8c5a34;
 }
-.card img.main {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  transition: 0.3s ease;
-}
 
-.gallery img.active {
-  border: 2px solid #8c5a34;
-}
 
 /* ================= CONTACT ================= */
 .contact-box {
