@@ -1,66 +1,83 @@
-/* GENERAL */
+/* ================= GENERAL ================= */
+
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: #f8f5f0;
   margin: 0;
-  padding: 0;
-  color: #2d2d2d;
+  background: #f7f5f2;
+  color: #333;
 }
 
-/* HERO */
-.hero {
-  background: linear-gradient(to right, #8b5e3c, #5c3b23);
+/* ================= HEADER ================= */
+
+header {
+  background: linear-gradient(to right, #8b5a2b, #5a3b1e);
   color: white;
+  padding: 30px 20px;
   text-align: center;
-  padding: 80px 20px;
 }
 
-.hero h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
+header h1 {
+  margin: 0;
+  font-size: 36px;
 }
 
-.hero p {
-  font-size: 18px;
-  margin-bottom: 25px;
+/* ================= NAVIGATION ================= */
+
+nav {
+  background: #5a3b1e;
+  padding: 12px;
+  text-align: center;
 }
 
-.btn {
-  display: inline-block;
-  padding: 12px 30px;
-  background: #f4d19b;
-  color: #2d2d2d;
+nav a {
+  color: white;
+  margin: 0 15px;
   text-decoration: none;
-  border-radius: 30px;
   font-weight: bold;
   transition: 0.3s;
 }
 
-.btn:hover {
-  background: white;
+nav a:hover {
+  color: #f4d19b;
 }
 
-/* PRODUCT CARD */
+/* ================= SECTION ================= */
+
+section {
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ================= PRODUCTS GRID ================= */
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+/* ================= PRODUCT CARD ================= */
+
 .product {
   background: white;
-  margin: 60px auto;
-  padding: 30px;
-  max-width: 900px;
-  border-radius: 18px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.07);
-  transition: transform 0.3s ease;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
 }
 
 .product:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
 }
 
 .product h2 {
-  margin-bottom: 20px;
-  font-size: 26px;
+  margin-bottom: 15px;
+  font-size: 22px;
 }
 
-/* PRODUCT GALLERY */
+/* ================= PRODUCT GALLERY ================= */
+
 .product-gallery {
   display: flex;
   flex-direction: column;
@@ -69,53 +86,82 @@ body {
 }
 
 /* MAIN IMAGE */
+
 .product-gallery img:first-child {
   width: 100%;
-  max-width: 600px;
-  max-height: 450px;
-  object-fit: contain;   /* Prevent ugly cropping */
-  border-radius: 14px;
-  margin-bottom: 10px;
+  max-height: 280px;
+  object-fit: contain;
+  border-radius: 12px;
   background: #eee;
 }
 
 /* THUMBNAILS CONTAINER */
+
 .product-gallery div {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 /* THUMBNAILS */
+
 .product-gallery img:not(:first-child) {
-  width: 95px;
-  height: 80px;
+  width: 70px;
+  height: 65px;
   object-fit: cover;
   border-radius: 8px;
   cursor: pointer;
+  opacity: 0.8;
   transition: 0.3s;
-  opacity: 0.85;
 }
 
 .product-gallery img:not(:first-child):hover {
-  transform: scale(1.1);
+  transform: scale(1.08);
   opacity: 1;
 }
 
-/* WHATSAPP BUTTON */
+/* ================= WHATSAPP BUTTON ================= */
+
 .order-btn {
   display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
+  margin-top: 15px;
+  padding: 10px 20px;
   background: #25D366;
   color: white;
   text-decoration: none;
-  border-radius: 30px;
+  border-radius: 25px;
   font-weight: bold;
   transition: 0.3s;
 }
 
 .order-btn:hover {
   background: #1ebe5d;
+}
+
+/* ================= CALL TO ACTION ================= */
+
+.cta {
+  background: #8b5a2b;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 60px;
+}
+
+.cta a {
+  color: #f4d19b;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #ddd;
+  margin-top: 40px;
+  font-size: 14px;
 }
