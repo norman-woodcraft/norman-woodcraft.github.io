@@ -1,40 +1,37 @@
-/* ===============================
-   GLOBAL
-================================= */
+/* ================= GLOBAL ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-  background: #f4efe6;
-  color: #3e2c1c;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5efe6;
+  color: #3b2a1a;
   line-height: 1.6;
 }
 
-/* ===============================
-   HEADER
-================================= */
+/* ================= HEADER ================= */
 header {
-  background: linear-gradient(to right, #5c3a21, #8b5e3c);
+  background: linear-gradient(90deg, #5a3b22, #8c5a34);
   color: white;
   padding: 1.2rem;
   text-align: center;
   letter-spacing: 1px;
 }
 
+/* ================= NAV ================= */
 nav {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  background: #3e2c1c;
-  padding: 0.8rem;
+  background: #3b2a1a;
+  padding: 1rem;
 }
 
 nav a {
-  color: #f4efe6;
+  color: #f5efe6;
   text-decoration: none;
   font-weight: 500;
   transition: 0.3s;
@@ -44,18 +41,16 @@ nav a:hover {
   color: #ffcc70;
 }
 
-/* ===============================
-   HERO
-================================= */
+/* ================= HERO ================= */
 .hero {
-  background: url("images/wooden-4x4-pickup-1.jpg") center/cover;
-  height: 70vh;
+  height: 75vh;
+  background: url("images/wooden-4x4-pickup-1.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
   text-align: center;
   position: relative;
+  color: white;
 }
 
 .hero::after {
@@ -67,7 +62,7 @@ nav a:hover {
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero h1 {
@@ -79,31 +74,46 @@ nav a:hover {
   font-size: 1.2rem;
 }
 
-/* ===============================
-   PRODUCTS GRID
-================================= */
+/* ================= BUTTON ================= */
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  background: linear-gradient(90deg, #8c5a34, #c28b5c);
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* ================= PRODUCTS ================= */
 .products {
   padding: 4rem 2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
 }
 
 .card {
   background: #fffaf3;
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: 0.4s;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
 }
 
 .card img.main {
   width: 100%;
-  height: 220px;
+  height: 240px;
   object-fit: cover;
 }
 
@@ -115,83 +125,51 @@ nav a:hover {
   margin-bottom: 0.5rem;
 }
 
-.card p {
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
-}
-
-/* ===============================
-   GALLERY THUMBNAILS
-================================= */
 .gallery {
   display: flex;
   gap: 8px;
-  margin-bottom: 1rem;
+  margin: 10px 0;
 }
 
 .gallery img {
   width: 60px;
   height: 60px;
-  object-fit: cover;
   border-radius: 6px;
+  object-fit: cover;
   cursor: pointer;
   border: 2px solid transparent;
   transition: 0.3s;
 }
 
 .gallery img:hover {
-  border: 2px solid #8b5e3c;
+  border: 2px solid #8c5a34;
 }
 
-/* ===============================
-   BUTTONS
-================================= */
-.btn {
-  display: inline-block;
-  background: linear-gradient(to right, #8b5e3c, #c28b5c);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  transform: scale(1.05);
-}
-
-/* ===============================
-   CONTACT
-================================= */
+/* ================= CONTACT ================= */
 .contact-box {
   max-width: 600px;
   margin: 3rem auto;
   padding: 2rem;
   background: #fffaf3;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
 .contact-box p {
   margin-bottom: 1rem;
 }
 
-/* ===============================
-   FOOTER
-================================= */
+/* ================= FOOTER ================= */
 footer {
   text-align: center;
   padding: 1.5rem;
-  background: #3e2c1c;
+  background: #3b2a1a;
   color: white;
   margin-top: 4rem;
 }
 
-/* ===============================
-   RESPONSIVE
-================================= */
-@media (max-width: 768px) {
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
   .hero h1 {
     font-size: 2rem;
   }
