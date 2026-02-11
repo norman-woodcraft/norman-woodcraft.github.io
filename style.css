@@ -1,217 +1,198 @@
-/* ================= GLOBAL RESET ================= */
-
+/* ===============================
+   GLOBAL
+================================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-  scroll-behavior: smooth;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-  background: #f4f6f9;
-  color: #222;
+  background: #f4efe6;
+  color: #3e2c1c;
   line-height: 1.6;
 }
 
-/* ================= NAVBAR ================= */
+/* ===============================
+   HEADER
+================================= */
+header {
+  background: linear-gradient(to right, #5c3a21, #8b5e3c);
+  color: white;
+  padding: 1.2rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
 
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  backdrop-filter: blur(14px);
-  background: rgba(17,17,17,0.85);
-  padding: 18px 8%;
+nav {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background: #3e2c1c;
+  padding: 0.8rem;
 }
 
-.logo {
-  color: #fff;
-  font-weight: 600;
-  font-size: 20px;
-}
-
-.nav-links a {
-  color: #ddd;
+nav a {
+  color: #f4efe6;
   text-decoration: none;
-  margin-left: 25px;
+  font-weight: 500;
   transition: 0.3s;
 }
 
-.nav-links a:hover,
-.nav-links .active {
-  color: #ffb347;
+nav a:hover {
+  color: #ffcc70;
 }
 
-/* ================= HERO ================= */
-
-.hero,
-.hero-small,
-.hero-products {
-  text-align: center;
+/* ===============================
+   HERO
+================================= */
+.hero {
+  background: url("images/wooden-4x4-pickup-1.jpg") center/cover;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
-  padding: 140px 20px;
-  background: linear-gradient(135deg, #1e1e1e, #3b3b3b);
+  text-align: center;
+  position: relative;
 }
 
-.hero h1,
-.hero-products h1 {
-  font-size: 50px;
-  margin-bottom: 15px;
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
 }
 
-.hero p,
-.hero-products p {
-  font-size: 18px;
-  opacity: 0.9;
+.hero-content {
+  position: relative;
+  z-index: 1;
 }
 
-/* ================= BUTTONS ================= */
+.hero h1 {
+  font-size: 3rem;
+}
 
-.btn-primary {
+.hero p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+/* ===============================
+   PRODUCTS GRID
+================================= */
+.products {
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: #fffaf3;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img.main {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 1.2rem;
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+/* ===============================
+   GALLERY THUMBNAILS
+================================= */
+.gallery {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+.gallery img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.gallery img:hover {
+  border: 2px solid #8b5e3c;
+}
+
+/* ===============================
+   BUTTONS
+================================= */
+.btn {
   display: inline-block;
-  margin-top: 20px;
-  padding: 12px 30px;
+  background: linear-gradient(to right, #8b5e3c, #c28b5c);
+  color: white;
+  padding: 10px 20px;
   border-radius: 30px;
   text-decoration: none;
-  color: white;
-  background: linear-gradient(45deg, #ffb347, #ff7b00);
-  transition: 0.3s ease;
-  font-weight: 500;
-}
-
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(255,123,0,0.4);
-}
-
-/* ================= PRODUCTS GRID ================= */
-
-.products-grid {
-  padding: 80px 8%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 35px;
-}
-
-/* ================= PRODUCT CARD ================= */
-
-.product-card {
-  background: white;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-  transition: 0.4s ease;
-  animation: fadeUp 0.6s ease forwards;
-}
-
-.product-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
-}
-
-.product-card img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-  transition: 0.5s ease;
-}
-
-.product-card:hover img {
-  transform: scale(1.08);
-}
-
-.product-card h3 {
-  padding: 20px 20px 5px;
-  font-size: 20px;
-}
-
-.product-card p {
-  padding: 0 20px 20px;
-  color: #666;
-  font-size: 14px;
-}
-
-/* ================= SECTIONS ================= */
-
-section {
-  animation: fadeUp 0.8s ease;
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ================= WHY US ================= */
-
-.why-us {
-  padding: 80px 8%;
-  background: white;
-  text-align: center;
-}
-
-.features {
-  margin-top: 40px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-}
-
-.feature-card {
-  background: #f8f8f8;
-  padding: 30px;
-  border-radius: 15px;
+  font-weight: bold;
   transition: 0.3s;
 }
 
-.feature-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+.btn:hover {
+  transform: scale(1.05);
 }
 
-/* ================= CTA ================= */
-
-.cta {
-  background: linear-gradient(135deg, #ff7b00, #ffb347);
-  color: white;
-  text-align: center;
-  padding: 80px 20px;
+/* ===============================
+   CONTACT
+================================= */
+.contact-box {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #fffaf3;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-.cta h2 {
-  font-size: 32px;
-  margin-bottom: 15px;
+.contact-box p {
+  margin-bottom: 1rem;
 }
 
-/* ================= FOOTER ================= */
-
+/* ===============================
+   FOOTER
+================================= */
 footer {
   text-align: center;
-  padding: 20px;
-  background: #111;
-  color: #aaa;
-}
-
-/* ================= FLOATING WHATSAPP ================= */
-
-.floating-whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
+  padding: 1.5rem;
+  background: #3e2c1c;
   color: white;
-  padding: 14px 18px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-  transition: 0.3s;
+  margin-top: 4rem;
 }
 
-.floating-whatsapp:hover {
-  transform: scale(1.08);
+/* ===============================
+   RESPONSIVE
+================================= */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
 }
