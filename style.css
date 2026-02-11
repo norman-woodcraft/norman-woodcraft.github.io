@@ -1,58 +1,121 @@
+/* GENERAL */
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   background: #f8f5f0;
   margin: 0;
   padding: 0;
   color: #2d2d2d;
 }
 
+/* HERO */
+.hero {
+  background: linear-gradient(to right, #8b5e3c, #5c3b23);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #f4d19b;
+  color: #2d2d2d;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: white;
+}
+
+/* PRODUCT CARD */
 .product {
   background: white;
-  margin: 40px auto;
-  padding: 25px;
+  margin: 60px auto;
+  padding: 30px;
   max-width: 900px;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.07);
+  transition: transform 0.3s ease;
+}
+
+.product:hover {
+  transform: translateY(-6px);
 }
 
 .product h2 {
-  margin-bottom: 15px;
-  font-size: 24px;
+  margin-bottom: 20px;
+  font-size: 26px;
 }
 
+/* PRODUCT GALLERY */
 .product-gallery {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }
 
-.product-gallery img {
-  border-radius: 12px;
-}
-
+/* MAIN IMAGE */
 .product-gallery img:first-child {
   width: 100%;
+  max-width: 600px;
   max-height: 450px;
-  object-fit: cover;
-  margin-bottom: 15px;
+  object-fit: contain;   /* Prevent ugly cropping */
+  border-radius: 14px;
+  margin-bottom: 10px;
+  background: #eee;
 }
 
+/* THUMBNAILS CONTAINER */
+.product-gallery div {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* THUMBNAILS */
 .product-gallery img:not(:first-child) {
-  width: 120px;
-  height: 100px;
+  width: 95px;
+  height: 80px;
   object-fit: cover;
+  border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: 0.3s;
+  opacity: 0.85;
 }
 
 .product-gallery img:not(:first-child):hover {
   transform: scale(1.1);
+  opacity: 1;
 }
 
-.product-gallery {
-  gap: 10px;
+/* WHATSAPP BUTTON */
+.order-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-.product-gallery div {
-  display: flex;
-  gap: 10px;
+.order-btn:hover {
+  background: #1ebe5d;
 }
