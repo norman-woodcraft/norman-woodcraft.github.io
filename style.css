@@ -1,167 +1,205 @@
-/* ================= GENERAL ================= */
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  margin: 0;
-  background: #f7f5f2;
-  color: #333;
+  background-color: #f8f5f1;
+  color: #2e2e2e;
+  line-height: 1.6;
 }
 
-/* ================= HEADER ================= */
-
-header {
-  background: linear-gradient(to right, #8b5a2b, #5a3b1e);
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: #111;
   color: white;
-  padding: 30px 20px;
-  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 36px;
-}
-
-/* ================= NAVIGATION ================= */
-
-nav {
-  background: #5a3b1e;
-  padding: 12px;
-  text-align: center;
-}
-
-nav a {
+.navbar a {
   color: white;
-  margin: 0 15px;
   text-decoration: none;
-  font-weight: bold;
+  margin-left: 25px;
+  font-weight: 500;
   transition: 0.3s;
 }
 
-nav a:hover {
-  color: #f4d19b;
+.navbar a:hover {
+  color: #c59d5f;
 }
 
-/* ================= SECTION ================= */
-
-section {
-  padding: 40px 20px;
-  max-width: 1100px;
-  margin: auto;
+.logo {
+  font-weight: 600;
+  font-size: 20px;
 }
 
-/* ================= PRODUCTS GRID ================= */
+/* HERO */
+.hero {
+  height: 90vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('images/hero.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
 
-.products {
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+/* Buttons */
+.btn-primary {
+  background: #c59d5f;
+  color: white;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #a67c3b;
+}
+
+/* ABOUT */
+.about {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.about h2 {
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+/* WHY US */
+.why-us {
+  padding: 60px 10%;
+  background: #fff;
+}
+
+.why-us h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 30px;
+}
+
+.features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
 }
 
-/* ================= PRODUCT CARD ================= */
-
-.product {
-  background: white;
-  padding: 25px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  transition: 0.3s ease;
-}
-
-.product:hover {
-  transform: translateY(-8px);
-}
-
-.product h2 {
-  margin-bottom: 15px;
-  font-size: 22px;
-}
-
-/* ================= PRODUCT GALLERY ================= */
-
-.product-gallery {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-
-/* MAIN IMAGE */
-
-.product-gallery img:first-child {
-  width: 100%;
-  max-height: 280px;
-  object-fit: contain;
+.feature-card {
+  background: #f8f5f1;
+  padding: 30px;
   border-radius: 12px;
-  background: #eee;
-}
-
-/* THUMBNAILS CONTAINER */
-
-.product-gallery div {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-/* THUMBNAILS */
-
-.product-gallery img:not(:first-child) {
-  width: 70px;
-  height: 65px;
-  object-fit: cover;
-  border-radius: 8px;
-  cursor: pointer;
-  opacity: 0.8;
+  text-align: center;
   transition: 0.3s;
 }
 
-.product-gallery img:not(:first-child):hover {
-  transform: scale(1.08);
-  opacity: 1;
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
 }
 
-/* ================= WHATSAPP BUTTON ================= */
+/* CTA */
+.cta {
+  padding: 80px 10%;
+  text-align: center;
+  background: #111;
+  color: white;
+}
 
-.order-btn {
+.btn-whatsapp {
   display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
+  margin-top: 20px;
   background: #25D366;
+  padding: 12px 30px;
+  border-radius: 30px;
   color: white;
   text-decoration: none;
-  border-radius: 25px;
-  font-weight: bold;
+  font-weight: 500;
   transition: 0.3s;
 }
 
-.order-btn:hover {
+.btn-whatsapp:hover {
   background: #1ebe5d;
 }
 
-/* ================= CALL TO ACTION ================= */
-
-.cta {
-  background: #8b5a2b;
-  color: white;
-  text-align: center;
-  padding: 40px 20px;
-  margin-top: 60px;
-}
-
-.cta a {
-  color: #f4d19b;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-/* ================= FOOTER ================= */
-
+/* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
-  background: #ddd;
-  margin-top: 40px;
-  font-size: 14px;
+  background: #000;
+  color: #aaa;
+}
+
+/* PRODUCTS PAGE */
+.products {
+  padding: 80px 8%;
+  display: grid;
+  gap: 60px;
+}
+
+.product {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+.product h2 {
+  margin-bottom: 20px;
+}
+
+.product-gallery {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.product-gallery img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.product-gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    margin-top: 10px;
+  }
 }
