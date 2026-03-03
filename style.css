@@ -87,13 +87,13 @@ nav a:hover {
   box-shadow: 0 15px 40px rgba(0,0,0,0.12);
 }
 
-/* Main Image */
+/* ================= MAIN IMAGE ================= */
 .card img.main {
   width: 100%;
   height: 260px;
   object-fit: cover;
   cursor: pointer;
-  transition: transform 0.4s ease, opacity 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 .card img.main:hover {
@@ -138,18 +138,22 @@ nav a:hover {
   cursor: pointer;
   border: 2px solid transparent;
   transition: all 0.3s ease;
+  opacity: 0.6;
 }
 
 .gallery img:hover {
   transform: scale(1.05);
+  opacity: 1;
 }
 
-.gallery img.active {
+/* ACTIVE THUMBNAIL (Matches HTML class) */
+.gallery img.active-thumb {
   border-color: #c28b5c;
+  opacity: 1;
 }
 
-/* ================= LIGHTBOX ================= */
-#lightbox {
+/* ================= FULLSCREEN MODAL ================= */
+.image-modal {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.9);
@@ -159,16 +163,15 @@ nav a:hover {
   z-index: 9999;
 }
 
-#lightbox img {
+.image-modal img.modal-content {
   max-width: 90%;
   max-height: 85%;
   border-radius: 12px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-  transition: opacity 0.3s ease;
 }
 
 /* Close Button */
-#closeLightbox {
+.close-modal {
   position: absolute;
   top: 30px;
   right: 40px;
@@ -176,21 +179,6 @@ nav a:hover {
   color: white;
   cursor: pointer;
 }
-
-/* Arrows */
-.lightbox-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 50px;
-  color: white;
-  cursor: pointer;
-  padding: 10px;
-  user-select: none;
-}
-
-#prevArrow { left: 30px; }
-#nextArrow { right: 30px; }
 
 /* ================= FOOTER ================= */
 footer {
@@ -203,6 +191,7 @@ footer {
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
+
   nav {
     flex-direction: column;
     gap: 0.8rem;
@@ -216,4 +205,5 @@ footer {
     width: 55px;
     height: 55px;
   }
+
 }
